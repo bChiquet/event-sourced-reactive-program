@@ -1,4 +1,4 @@
-def reactions(events, reactor):
+def business_reactions(events, reactor):
 
     @reactor.react_to("complaint")
     def express_outrage():
