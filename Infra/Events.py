@@ -2,7 +2,7 @@ class Events:
     """
     A list of events, with support for reactions.
     """
-    def __init__(self, reactor):
+    def __init__(self, reactor=None):
         self.reactor = reactor
         self.events = []
 
@@ -12,5 +12,6 @@ class Events:
         If no reactor is provided, only adds events.
         """
         self.events.append(event)
-        self.reactor.apply_events_triggered_by(event)
+        if self.reactor:
+            self.reactor.apply_events_triggered_by(event)
         return self

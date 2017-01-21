@@ -16,3 +16,6 @@ class EventsTest(TestCase):
         reactor = Mock()
         Events(reactor).happening("event")
         reactor.apply_events_triggered_by.assert_called_once_with("event")
+
+    def test_when_Events_is_created_without_reactor_do_not_call_reactor(self):
+        Events().happening("event")
