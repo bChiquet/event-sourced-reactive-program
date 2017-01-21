@@ -10,7 +10,7 @@ class Reactor:
     def react_to(self, event):
         def reaction_subscription(reaction):
             subscribe_reaction(reaction)
-            return reaction  # In order for reaction to be uncallable from the outside, you can return pass function.
+            return reaction
 
         def subscribe_reaction(reaction):
             if event in self.event_reaction_map:
