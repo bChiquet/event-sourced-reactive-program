@@ -1,0 +1,18 @@
+from unittest import TestCase
+from unittest.mock import Mock
+
+from Infra.Events import Events
+
+
+class EventsTest(TestCase):
+    def test_event_should_be_added_to_events_list(self):
+        reactor = Mock()
+        events = Events(reactor)\
+            .happening("event")\
+            .happening("otherEvent")
+        self.assertEqual(events.events, ["event", "otherEvent"])
+
+    def test_adding_an_event_should_fire_reactor_for_that_event(self):
+        reactor = Mock()
+        Events(reactor).happening("event")
+        reactor.apply_events_triggered_by.assert_called_once_with("event")
