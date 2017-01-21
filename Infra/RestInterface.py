@@ -1,5 +1,7 @@
 from flask import Flask
 
+OK = ""
+
 
 class RestAPI:
     def __init__(self, name, events):
@@ -15,7 +17,7 @@ class RestAPI:
         def prepare_handler():
             def default_handler():
                 self.events.happening(event)
-                return ""
+                return OK
 
             if handler is None:
                 return default_handler

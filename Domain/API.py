@@ -4,7 +4,7 @@ def business_api(server):
         def handler():
             print("ow, extra hot!")
             events.happening("complaint")
-            return ""
+            return server.OK
         return handler
 
     server.add_event_url(url="/hot-complaint", handler=extra_hot_complaint)
