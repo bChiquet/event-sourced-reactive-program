@@ -2,13 +2,9 @@ from Domain.API import business_api
 from Domain.Complaint import business_reactions
 from Infra.Events import Events
 from Infra.Reactor import Reactor
-from Infra.Rest.RestInterface import RestAPI
 
 reactor = Reactor()
 events = Events(reactor)
 business_reactions(events, reactor)
 
-net = RestAPI("complaints department", events)
-business_api(net)
-
-net.start()
+business_api(events).run()
