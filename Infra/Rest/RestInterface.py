@@ -19,7 +19,8 @@ class RestAPI:
         # If yes, should they be ordered ?
         """
         Binds an URL on the server to the creation of an event.
-        If a handler is provided instead of the event, executes the handler instead (handler must create event).
+        If a handler is provided instead of the event, executes
+        the handler instead (handler must create event).
         :param url: the server URL which will be bound to the event.
         :param event: event to be created when request comes.
         :param handler: custom request handler.

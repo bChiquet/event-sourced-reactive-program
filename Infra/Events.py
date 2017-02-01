@@ -8,7 +8,7 @@ class Events:
 
     def happening(self, event):
         """
-        Add an event to the event list, and triggers the reactions for this event.
+        Add an event to the event list, and triggers reactions for this event.
         If no reactor is provided, only adds events.
         """
         self.events.append(event)

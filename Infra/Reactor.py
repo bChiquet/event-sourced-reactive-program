@@ -8,7 +8,8 @@ class Reactor:
     def apply_events_triggered_by(self, event):
         """
         Triggers all the reactions declared for an event.
-        NOTE : Reactions are fired in the order they are declared. This may change, don't use this property.
+        NOTE : Reactions are fired in the order they are declared.
+        This may change, don't use this property.
         """
         if event in self.event_reaction_map:
             for reaction in self.event_reaction_map[event]:
