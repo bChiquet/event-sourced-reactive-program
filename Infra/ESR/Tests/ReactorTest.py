@@ -1,7 +1,7 @@
 from unittest import TestCase
 from unittest.mock import MagicMock, call
 
-from Infra.Reactor import Reactor
+from Infra.ESR.Reactor import Reactor
 
 
 class ReactorTest(TestCase):

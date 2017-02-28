@@ -1,7 +1,7 @@
 from unittest import TestCase
 from unittest.mock import Mock
 
-from Infra.Events import Events
+from Infra.ESR.Events import Events
 
 
 class EventsTest(TestCase):
